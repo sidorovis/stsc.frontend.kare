@@ -1,0 +1,2 @@
+module FeedzillaDownloaderHelper
+end
