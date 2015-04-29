@@ -38,3 +38,6 @@ gem 'sdoc', '~> 0.4.0',          group: :doc
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'tzinfo-data', platforms: [:mingw, :mswin]
+
+# Multi table support, so we can connect to stsc databases to read data from them
+gem 'magic_multi_connections'
