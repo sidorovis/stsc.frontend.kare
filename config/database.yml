@@ -9,24 +9,33 @@
 # And be sure to use new-style password hashing:
 #   http://dev.mysql.com/doc/refman/5.0/en/old-client.html
 #
+#default: &default
+#  adapter: mysql2
+#  encoding: utf8
+#  pool: 5
+#  username: root
+#  password:
+#  host: localhost
+
 default: &default
-  adapter: mysql2
-  encoding: utf8
+  adapter: sqlite3
   pool: 5
-  username: root
-  password:
-  host: localhost
+  timeout: 5000
 
 development:
   <<: *default
-  database: kare_development
+  database: db/development.sqlite3
 
 # Warning: The database defined as "test" will be erased and
 # re-generated from your development database when you run "rake".
 # Do not set this db to the same as development or production.
 test:
   <<: *default
-  database: kare_test
+  database: db/test.sqlite3
+
+production:
+  <<: *default
+  database: db/production.sqlite3
 
 # As with config/secrets.yml, you never want to store sensitive information,
 # like your database password, in your source code. If your source code is
@@ -47,8 +56,8 @@ test:
 #   production:
 #     url: <%= ENV['DATABASE_URL'] %>
 #
-production:
-  <<: *default
-  database: kare_production
-  username: kare
-  password: <%= ENV['KARE_DATABASE_PASSWORD'] %>
+#production:
+#  <<: *default
+#  database: kare_production
+#  username: kare
+#  password: <%= ENV['KARE_DATABASE_PASSWORD'] %>
