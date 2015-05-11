@@ -23,3 +23,27 @@ test:
 production:
   <<: *default
   database: db/production.sqlite3
+
+stsc_feedzilla_downloader:
+  development:
+    <<: *default
+    database: db/stsc_feedzilla_downloader/development.sqlite3
+  test:
+    <<: *default
+    database: db/stsc_feedzilla_downloader/test.sqlite3
+  production:
+    <<: *default
+    database: db/stsc_feedzilla_downloader/production.sqlite3
+
+stsc_yahoo_downloader:
+  development:
+    <<: *default
+    database: db/stsc_yahoo_downloader/development.sqlite3
+  test:
+    <<: *default
+    database: db/stsc_yahoo_downloader/test.sqlite3
+  production:
+    <<: *default
+    database: db/stsc_yahoo_downloader/production.sqlite3
+
+
