@@ -28,7 +28,7 @@ namespace :db do
         puts "Rake Task defined only for development or test environment"
     else
         ActiveRecord::Base.establish_connection DB_CONFIG["stsc_yahoo_downloader"]
-        ActiveRecord::Migrator.migrate("db/migrate/stsc_yahoo_downloader")
+        ActiveRecord::Migrator.migrate("db/migrate_external/stsc_yahoo_downloader")
     end
   end
 
@@ -38,7 +38,7 @@ namespace :db do
         puts "Rake Task defined only for development or test environment"
     else
         ActiveRecord::Base.establish_connection DB_CONFIG["stsc_feedzilla_downloader"]
-        ActiveRecord::Migrator.migrate("db/migrate/stsc_feedzilla_downloader")
+        ActiveRecord::Migrator.migrate("db/migrate_external/stsc_feedzilla_downloader")
     end
   end
 

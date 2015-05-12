@@ -1,3 +1,7 @@
 ﻿language: ruby
 rvm:
   - 2.1.5-p273
+before_install:
+  - rake db:create_external
+  - rake db:migrate_external RAILS_ENV=test
+
