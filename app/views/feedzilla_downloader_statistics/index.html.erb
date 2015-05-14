@@ -1,0 +1,8 @@
+<h1>Feedzilla Downloader Statistics</h1>
+
+<% @downloader_statistics.each do |i| %>
+<%= i.setting_name %> <b>[<%= i.created_at %>]</b> 
+<%= i.process_id %>(<%= i.start_date %>) 
+<b><%= i.statistic_type %></b>
+<%= i.message %></br>
+<% end %>

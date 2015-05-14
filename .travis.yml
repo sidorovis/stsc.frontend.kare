@@ -4,6 +4,8 @@ rvm:
 before_install:
   - gem install byebug -v '4.0.5'
 before_script:
-  - rake db:create_external
+  - rake db:create_external RAILS_ENV=test
   - rake db:migrate_external RAILS_ENV=test
+  - rake db:create RAILS_ENV=test
+  - rake db:migrate RAILS_ENV=test
 
