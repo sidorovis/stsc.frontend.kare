@@ -9,9 +9,18 @@ default: &default
   pool: 5
   timeout: 5000
 
+default_mysql: &default_mysql
+  adapter: mysql2
+  encoding: utf8
+  pool: 5
+  username: rilley_elf
+  password: rilley
+  host: localhost
+
+
 development:
-  <<: *default
-  database: db/development.sqlite3
+    <<: *default
+    database: db/development.sqlite3
 
 # Warning: The database defined as "test" will be erased and
 # re-generated from your development database when you run "rake".
@@ -32,8 +41,8 @@ stsc_feedzilla_downloader:
     <<: *default
     database: db/stsc_feedzilla_downloader/test.sqlite3
   production:
-    <<: *default
-    database: db/stsc_feedzilla_downloader/production.sqlite3
+    <<: *default_mysql
+    database: stsc_feedzilla_downloader
 
 stsc_yahoo_downloader:
   development:
@@ -43,7 +52,7 @@ stsc_yahoo_downloader:
     <<: *default
     database: db/stsc_yahoo_downloader/test.sqlite3
   production:
-    <<: *default
-    database: db/stsc_yahoo_downloader/production.sqlite3
+    <<: *default_mysql
+    database: stsc_yahoo_downloader
 
 
