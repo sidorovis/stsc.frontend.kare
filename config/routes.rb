@@ -1,11 +1,14 @@
 Rails.application.routes.draw do
+  get 'start_page/index'
+
   get 'feedzilla_downloader_statistics/index'
+  get 'feedzilla_downloader_statistics/:process_id' => 'feedzilla_downloader_statistics#view'
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
   # You can have the root of your site routed with "root"
-  # root 'welcome#index'
+  root 'start_page#index'
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
