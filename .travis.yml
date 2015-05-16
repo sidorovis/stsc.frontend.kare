@@ -1,8 +1,11 @@
 ﻿language: ruby
+
 rvm:
-  - 2.1.5-p273
+  - 2.1.5
+
 # before_install:
 #   - gem install byebug -v '4.0.5'
+
 before_script:
   - rake db:create_external RAILS_ENV=test
   - rake db:migrate_external RAILS_ENV=test
